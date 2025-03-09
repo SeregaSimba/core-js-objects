@@ -176,7 +176,7 @@ function sellTickets(queue) {
   let result25 = 0;
   let result50 = 0;
 
-  // const objTicks = Object.entries(queue);
+  // const objTicks = Object.values(queue);
   for (let i = 0; i < queue.length; i += 1) {
     const elem = queue[i];
 
@@ -216,8 +216,13 @@ function sellTickets(queue) {
  *    console.log(r.height);      // => 20
  *    console.log(r.getArea());   // => 200
  */
-function Rectangle(/* width, height */) {
-  throw new Error('Not implemented');
+function Rectangle(width, height) {
+  this.width = width;
+  this.height = height;
+
+  Rectangle.prototype.getArea = function () {
+    return this.width * this.height;
+  };
 }
 
 /**
